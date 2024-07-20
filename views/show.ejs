@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User detail</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            padding: 8px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1><u>All User Details</u></h1>
+    </center><br>
+
+    <table>
+        <tr>
+            <th> Purchase Power amount</th>
+            <th>Phone number</th>
+            <th>Email</th>
+            <th>Date of user registration</th>
+            <th>DOB</th>
+            <th>Monthly salary</th>
+        </tr>
+        <% for(user of userData){ %>
+            <tr>
+                <td>
+                    <%= user.PurchasePower %>
+                </td>
+                <td>
+                    <%= user.PhoneNumber %>
+                </td>
+                <td>
+                    <%= user.Email %>
+                </td>
+                <td>
+                    <%= user.RegistrationDate.toString().split(" ").slice(1,4) %>
+                </td>
+                <td>
+                    <%=user.DOB.toString().split(" ").slice(1,4) %>
+                </td>
+                <td>
+                    <%=user.MonthlySalary %>
+                </td>
+            </tr>
+            <% } %>
+    </table>
+</body>
+
+</html>
